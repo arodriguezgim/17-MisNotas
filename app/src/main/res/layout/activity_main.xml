@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/titulo_app"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/et_Password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -62,34 +62,41 @@
         android:background="@color/colorPrimaryDark"
         android:text="Entrar"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/et_Password"
+        app:layout_constraintStart_toStartOf="@+id/et_Password"
+        app:layout_constraintTop_toBottomOf="@+id/et_Password" />
 
     <ImageView
         android:id="@+id/imageFacebook"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageInsta"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageInsta"
-        app:srcCompat="@drawable/facebook"
-        tools:layout_editor_absoluteX="74dp" />
+        app:srcCompat="@drawable/facebook" />
 
     <ImageView
         android:id="@+id/imageInsta"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageTwitter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageFacebook"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/instagram"
-        tools:layout_editor_absoluteX="180dp" />
+        app:srcCompat="@drawable/instagram" />
 
     <ImageView
         android:id="@+id/imageTwitter"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageInsta"
         app:layout_constraintTop_toTopOf="@+id/imageInsta"
-        app:srcCompat="@drawable/gorjeo"
-        tools:layout_editor_absoluteX="278dp" />
+        app:srcCompat="@drawable/gorjeo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
