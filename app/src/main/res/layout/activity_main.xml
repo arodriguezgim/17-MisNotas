@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/titulo_app"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_Email" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -85,7 +85,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageTwitter"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageFacebook"
-        app:layout_constraintTop_toBottomOf="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/instagram" />
 
     <ImageView
