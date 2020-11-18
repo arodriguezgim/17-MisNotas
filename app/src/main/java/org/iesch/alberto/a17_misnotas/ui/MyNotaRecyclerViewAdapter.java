@@ -5,22 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.iesch.alberto.a17_misnotas.R;
-import org.iesch.alberto.a17_misnotas.ui.dummy.DummyContent.DummyItem;
+import org.iesch.alberto.a17_misnotas.models.Nota;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
+
 public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Nota> mValues;
 
-    public MyNotaRecyclerViewAdapter(List<DummyItem> items) {
+    public MyNotaRecyclerViewAdapter(List<Nota> items) {
         mValues = items;
     }
 
@@ -34,8 +32,12 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.tvTitulo.setText(holder.mItem.getTitulo());
+        holder.tvContenido.setText(holder.mItem.getContenido());
+
+        if ( holder.mItem.isFavorita()){
+            holder.imFavorito.setImageResource(R.drawable.ic_baseline_star_24);
+        }
     }
 
     @Override
@@ -45,20 +47,22 @@ public class MyNotaRecyclerViewAdapter extends RecyclerView.Adapter<MyNotaRecycl
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView tvTitulo;
+        public final TextView tvContenido;
+        public final ImageView imFavorito;
+        public Nota mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            tvTitulo = view.findViewById(R.id.tv_titulo);
+            tvContenido = view.findViewById(R.id.tv_contenido);
+            imFavorito = view.findViewById(R.id.imageViewFavorito);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + tvTitulo.getText() + "'";
         }
     }
 }

@@ -7,23 +7,30 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.iesch.alberto.a17_misnotas.R;
-import org.iesch.alberto.a17_misnotas.ui.dummy.DummyContent;
+import org.iesch.alberto.a17_misnotas.models.Nota;
 
-/**
- * A fragment representing a list of Items.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class NotaFragment extends Fragment {
+
+    //Necesitare una lista de Notas
+    private List<Nota> notalist;
+
+    private MyNotaRecyclerViewAdapter adapterNotas;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 1;
+    private int mColumnCount = 2;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -63,9 +70,18 @@ public class NotaFragment extends Fragment {
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+                recyclerView.setLayoutManager(new StaggeredGridLayoutManager(mColumnCount, StaggeredGridLayoutManager.VERTICAL));
             }
-            recyclerView.setAdapter(new MyNotaRecyclerViewAdapter(DummyContent.ITEMS));
+
+            //Vamosa crearnos algunas notas
+            notalist = new ArrayList<>();
+            notalist.add(new Nota("Lista de la compra", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco", true, android.R.color.holo_blue_light));
+            notalist.add(new Nota("Recordar", "He aparcado el coche en el Vado. No olvidarme de pagar el parkimetro", false, android.R.color.holo_orange_light));
+            notalist.add(new Nota("Cumpleaños (fiesta)", "No olvidar la Ginebra", true, android.R.color.holo_green_light));
+            //Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+
+            adapterNotas = new MyNotaRecyclerViewAdapter(notalist);
+            recyclerView.setAdapter(adapterNotas);
         }
         return view;
     }
