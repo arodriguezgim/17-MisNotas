@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-
-
         //COMIENZO A REGISTRAR EVENTOS
         Bundle bundle = new Bundle();
         bundle.putString("mensaje","Integracion con Firebase completa.");
