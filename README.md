@@ -1,4 +1,4 @@
-# App Nº17: Mis Notas
+# App 17: Mis Notas
 
 Aplicación que sirve para gestionar notas personales
 
