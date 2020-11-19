@@ -1,12 +1,12 @@
 package org.iesch.alberto.a17_misnotas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,13 +14,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.iesch.alberto.a17_misnotas.screens.RegistroActivity;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView btnRegistrar;
     private Button btnLogin;
     //1- Creamos una instancia de Firebase
     private FirebaseAnalytics mFirebaseAnalytics;
-
     private FirebaseAuth mAuth;
 
 

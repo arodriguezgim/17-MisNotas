@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryLight"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <ImageView
@@ -35,7 +35,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@color/colorPrimary"
         android:ems="10"
         android:hint="email"
         android:inputType="textEmailAddress"
@@ -49,7 +48,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"

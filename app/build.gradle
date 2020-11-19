@@ -41,6 +41,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
 
     implementation 'com.google.firebase:firebase-analytics'
+    // Declaramos la dependencia para el servicio Firebase Authentication
     implementation 'com.google.firebase:firebase-auth'
 
 

@@ -84,7 +84,7 @@
         android:layout_height="19dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
-        android:text="Volver a Login"
+        android:text="Ya registrado? Volver a Login"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="@+id/btnRegistrar"
         app:layout_constraintStart_toStartOf="@+id/btnRegistrar"
